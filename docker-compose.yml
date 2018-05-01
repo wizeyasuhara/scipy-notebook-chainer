@@ -1,0 +1,16 @@
+version: "2"
+services:
+  scipy-notebook:
+    build:
+      context: .
+    user: root
+    image: scipy-notebook-chainer
+    container_name: "scipy-notebook-chainer"
+    volumes:
+      - "./work:/home/jovyan/work"
+    ports:
+      - "8888:8888"
+    environment:
+      TERM: xterm-256color
+      JUPYTER_TOKEN: jupyter
+      GRANT_SUDO: "yes"
